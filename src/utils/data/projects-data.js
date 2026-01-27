@@ -30,5 +30,21 @@ export const projectsData = [
     tools: ['Flutter', 'Dart', 'Firebase'],
     code: '',
     demo: '',
+  },
+  {
+    id: 5,
+    name: 'Smart Voting System',
+    description: 'Developed a secure and automated smart voting system using facial recognition technology to authenticate voters. The system integrates advanced biometrics to replace traditional ID-based methods, ensuring high security and preventing fraudulent voting.',
+    tools: ['Python', 'Face Recognition', 'OpenCV', 'SQLite'],
+    code: '',
+    demo: '',
+  },
+  {
+    id: 6,
+    name: 'Construction Website',
+    description: 'Built a modern, responsive website for a construction company to feature their portfolio and services. The site features a CMS-like backend for easy project management and utilizes a sleek UI for improved client engagement.',
+    tools: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Express'],
+    code: '',
+    demo: '',
   }
 ]
