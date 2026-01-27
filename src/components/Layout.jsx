@@ -1,0 +1,19 @@
+import { Outlet } from 'react-router-dom'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import ScrollToTop from './helper/ScrollToTop'
+
+function Layout() {
+  return (
+    <>
+      <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+        <Navbar />
+        <Outlet />
+        <ScrollToTop />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+export default Layout

@@ -1,0 +1,34 @@
+export const projectsData = [
+  {
+    id: 1,
+    name: 'Vehicle Underbody & Blindspot Monitoring',
+    description: "Designed a driver safety system using wide-angle cameras and sensors for blind spot and underbody detection.",
+    tools: ['Wide-angle Cameras', 'Deep Learning', 'Edge Display Technology', 'IoT'],
+    code: '',
+    demo: '',
+  },
+  {
+    id: 2,
+    name: 'Ambulance Detection & Smart Traffic Control',
+    description: 'Proposed an IoT-based traffic management solution using siren recognition for automated detection of emergency vehicles. Designed logic for dynamic traffic signal prioritization to reduce response times.',
+    tools: ['IoT', 'Embedded Systems', 'Sensors', 'Microcontrollers', 'Machine Learning'],
+    code: '',
+    demo: '',
+  },
+  {
+    id: 3,
+    name: 'Poultry Automation and Monitoring System',
+    description: 'Developed an IoT-based poultry farm automation system with real-time monitoring and control. Built a cross-platform mobile app using Flutter and a web dashboard with React Vite, integrated with PostgreSQL database for data management and Raspberry Pi for hardware control.',
+    tools: ['IoT', 'Flutter App', 'React Vite', 'PostgreSQL', 'Sensors', 'Microcontrollers'],
+    code: '',
+    demo: '',
+  },
+  {
+    id: 4,
+    name: 'SVT Traders Order Management App',
+    description: 'Created a comprehensive order management mobile application for traders using Flutter and Dart. Integrated Firebase for real-time data synchronization, authentication, and cloud storage to streamline order processing and inventory tracking.',
+    tools: ['Flutter', 'Dart', 'Firebase'],
+    code: '',
+    demo: '',
+  }
+]
