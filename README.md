@@ -154,7 +154,3 @@ TELEGRAM_CHAT_ID=your_telegram_chat_id
 ## 📄 License
 
 This project is open source and available under the MIT License.
-
-## 🙏 Credits
-
-Original template by [Abu Said](https://github.com/said7388/developer-portfolio)
