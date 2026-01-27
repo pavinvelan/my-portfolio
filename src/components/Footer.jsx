@@ -24,7 +24,7 @@ function Footer() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/said7388/developer-portfolio"
+              href="https://github.com/pavinvelan/my-portfolio"
               className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
             >
               <IoStar />
@@ -33,7 +33,7 @@ function Footer() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/said7388/developer-portfolio/fork"
+              href="https://github.com/pavinvelan/my-portfolio/fork"
               className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
             >
               <CgGitFork />
