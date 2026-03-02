@@ -39,27 +39,27 @@ function Experience() {
                       className="absolute bottom-0 opacity-80"
                     />
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#00F0FF]">
-                        {experience.duration}
-                      </p>
+                      <div className="text-xs sm:text-sm text-[#00F0FF]">
+                        <DecryptedText text={experience.duration} animateOn="view" revealDirection="center" />
+                      </div>
                     </div>
                     <div className="flex items-center gap-x-8 px-3 py-5">
                       <div className="text-violet-500 transition-all duration-300 hover:scale-125">
                         <BsPersonWorkspace size={36} />
                       </div>
                       <div>
-                        <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                          {experience.title}
-                        </p>
-                        <p className="text-sm sm:text-base">
-                          {experience.company}
-                        </p>
+                        <div className="text-base sm:text-xl mb-2 font-medium uppercase">
+                          <DecryptedText text={experience.title} animateOn="view" revealDirection="start" />
+                        </div>
+                        <div className="text-sm sm:text-base">
+                          <DecryptedText text={experience.company} animateOn="view" revealDirection="start" />
+                        </div>
                       </div>
                     </div>
                     {experience.description && (
-                      <p className="text-sm text-gray-400 px-3 pb-3">
-                        {experience.description}
-                      </p>
+                      <div className="text-sm text-gray-400 px-3 pb-3 leading-relaxed">
+                        <DecryptedText text={experience.description} animateOn="view" revealDirection="start" maxIterations={15} />
+                      </div>
                     )}
                   </div>
                 </GlowCard>

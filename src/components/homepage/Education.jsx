@@ -45,25 +45,27 @@ function Education() {
                       className="absolute bottom-0 opacity-80"
                     />
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#00F0FF]">
-                        {education.duration}
-                      </p>
+                      <div className="text-xs sm:text-sm text-[#00F0FF]">
+                        <DecryptedText text={education.duration} animateOn="view" revealDirection="center" />
+                      </div>
                     </div>
                     <div className="flex items-center gap-x-8 px-3 py-5">
                       <div className="text-violet-500 transition-all duration-300 hover:scale-125">
                         <BsPersonWorkspace size={36} />
                       </div>
                       <div>
-                        <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                          {education.title}
-                        </p>
-                        <p className="text-sm sm:text-base">{education.institution}</p>
+                        <div className="text-base sm:text-xl mb-2 font-medium uppercase">
+                          <DecryptedText text={education.title} animateOn="view" revealDirection="start" />
+                        </div>
+                        <div className="text-sm sm:text-base">
+                          <DecryptedText text={education.institution} animateOn="view" revealDirection="start" />
+                        </div>
                       </div>
                     </div>
                     {education.description && (
-                      <p className="text-sm text-gray-400 px-3 pb-3">
-                        {education.description}
-                      </p>
+                      <div className="text-sm text-gray-400 px-3 pb-3 leading-relaxed">
+                        <DecryptedText text={education.description} animateOn="view" revealDirection="start" maxIterations={15} />
+                      </div>
                     )}
                   </div>
                 </GlowCard>

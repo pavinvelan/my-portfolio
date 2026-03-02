@@ -1,4 +1,5 @@
 import React from 'react'
+import DecryptedText from '../DecryptedText'
 
 function ProjectCard({ project }) {
   return (
@@ -14,9 +15,9 @@ function ProjectCard({ project }) {
             <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
             <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
           </div>
-          <p className="text-center flex-1 text-[#00F0FF] text-sm md:text-base lg:text-xl">
-            {project.name}
-          </p>
+          <div className="text-center flex-1 text-[#00F0FF] text-sm md:text-base lg:text-xl">
+            <DecryptedText text={project.name} animateOn="view" revealDirection="center" />
+          </div>
         </div>
       </div>
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
@@ -30,7 +31,9 @@ function ProjectCard({ project }) {
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
             <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-300">{project.name}</span>
+            <span className="text-amber-300">
+              <DecryptedText text={project.name} animateOn="view" revealDirection="start" />
+            </span>
             <span className="text-gray-400">{`',`}</span>
           </div>
 
@@ -48,9 +51,11 @@ function ProjectCard({ project }) {
             <span className="text-gray-400">{"],"}</span>
           </div>
 
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
+          <div className="ml-4 lg:ml-8 mr-2 flex">
+            <span className="text-white shrink-0">Description:</span>
+            <span className="text-cyan-400 ml-2">
+              <DecryptedText text={project.description} animateOn="view" revealDirection="start" maxIterations={15} />
+            </span>
             <span className="text-gray-400">,</span>
           </div>
           <div><span className="text-gray-400">{`};`}</span></div>
