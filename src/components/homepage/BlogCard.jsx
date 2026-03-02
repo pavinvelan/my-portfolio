@@ -21,7 +21,7 @@ function BlogCard({ blog }) {
           {blog.description}
         </p>
         <div className="flex items-center gap-3 mt-3">
-          <span className="text-xs text-[#16f2b3]">
+          <span className="text-xs text-[#00F0FF]">
             {new Date(blog.published_at).toLocaleDateString()}
           </span>
           <span className="text-xs text-gray-500">

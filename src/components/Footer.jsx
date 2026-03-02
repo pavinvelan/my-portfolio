@@ -15,7 +15,7 @@ function Footer() {
               target="_blank" 
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/pavinvelan/" 
-              className="text-[#16f2b3]"
+              className="text-[#00F0FF]"
             >
               PAVINVELAN S K
             </a>
@@ -25,7 +25,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/pavinvelan/my-portfolio"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              className="flex items-center gap-2 uppercase hover:text-[#00F0FF]"
             >
               <IoStar />
               <span>Star</span>
@@ -34,7 +34,7 @@ function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/pavinvelan/my-portfolio/fork"
-              className="flex items-center gap-2 uppercase hover:text-[#16f2b3]"
+              className="flex items-center gap-2 uppercase hover:text-[#00F0FF]"
             >
               <CgGitFork />
               <span>Fork</span>

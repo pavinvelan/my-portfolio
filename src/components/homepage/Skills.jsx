@@ -1,6 +1,7 @@
 import { skillsData } from "@/utils/data/skills"
 import { skillsImage } from "@/utils/skill-image"
 import Marquee from "react-fast-marquee"
+import DecryptedText from "../DecryptedText"
 
 function Skills() {
   return (
@@ -17,7 +18,7 @@ function Skills() {
         <div className="flex items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
+            <DecryptedText text="Skills" animateOn="view" revealDirection="center" />
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
