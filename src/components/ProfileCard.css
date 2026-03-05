@@ -260,6 +260,9 @@
   overflow: visible;
   transform: translateZ(2);
   backface-visibility: hidden;
+  position: relative;
+  z-index: 5;
+  isolation: isolate;
 }
 
 .pc-avatar-content .avatar {
