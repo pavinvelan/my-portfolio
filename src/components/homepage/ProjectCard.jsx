@@ -3,10 +3,10 @@ import DecryptedText from '../DecryptedText'
 
 function ProjectCard({ project }) {
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
+    <div className="border-zinc-800/50 relative rounded-lg border bg-black/20 backdrop-blur-md w-full shadow-[0_0_30px_rgba(0,0,0,0.5)]">
       <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#A855F7] to-[#00F0FF]"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-[#00F0FF] to-transparent"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-400 to-zinc-600"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-zinc-600 to-transparent"></div>
       </div>
       <div className="px-4 lg:px-8 py-3 lg:py-5">
         <div className="flex flex-row items-center">
@@ -15,17 +15,17 @@ function ProjectCard({ project }) {
             <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
             <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
           </div>
-          <div className="text-center flex-1 text-[#00F0FF] text-sm md:text-base lg:text-xl">
+          <div className="text-center flex-1 text-zinc-300 text-sm md:text-base lg:text-xl">
             <DecryptedText text={project.name} animateOn="view" revealDirection="center" />
           </div>
         </div>
       </div>
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+      <div className="overflow-hidden border-t-[1px] border-zinc-800/50 px-4 lg:px-8 py-4 lg:py-8">
         <code className="font-mono text-xs md:text-sm lg:text-base">
           <div className="blink">
-            <span className="mr-2 text-[#A855F7]">const</span>
+            <span className="mr-2 text-zinc-400">const</span>
             <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-[#A855F7]">=</span>
+            <span className="mr-2 text-zinc-400">=</span>
             <span className="text-gray-400">{'{'}</span>
           </div>
           <div>
@@ -53,7 +53,7 @@ function ProjectCard({ project }) {
 
           <div className="ml-4 lg:ml-8 mr-2 flex">
             <span className="text-white shrink-0">Description:</span>
-            <span className="text-cyan-400 ml-2">
+            <span className="text-zinc-300 ml-2">
               <DecryptedText text={project.description} animateOn="view" revealDirection="start" maxIterations={15} />
             </span>
             <span className="text-gray-400">,</span>

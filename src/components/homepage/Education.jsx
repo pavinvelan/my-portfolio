@@ -7,20 +7,20 @@ import DecryptedText from "../DecryptedText"
 
 function Education() {
   return (
-    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-zinc-800">
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full" />
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-zinc-500 to-transparent w-full" />
         </div>
       </div>
 
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
+          <span className="w-24 h-[2px] bg-[#1a1a1a]"></span>
+          <span className="bg-[#1a1a1a] w-fit text-white p-2 px-5 text-xl rounded-md">
             <DecryptedText text="Educations" animateOn="view" revealDirection="center" />
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-[#1a1a1a]"></span>
         </div>
       </div>
 
@@ -45,12 +45,12 @@ function Education() {
                       className="absolute bottom-0 opacity-80"
                     />
                     <div className="flex justify-center">
-                      <div className="text-xs sm:text-sm text-[#00F0FF]">
+                      <div className="text-xs sm:text-sm text-zinc-300">
                         <DecryptedText text={education.duration} animateOn="view" revealDirection="center" />
                       </div>
                     </div>
                     <div className="flex items-center gap-x-8 px-3 py-5">
-                      <div className="text-violet-500 transition-all duration-300 hover:scale-125">
+                      <div className="text-zinc-400 transition-all duration-300 hover:scale-125">
                         <BsPersonWorkspace size={36} />
                       </div>
                       <div>

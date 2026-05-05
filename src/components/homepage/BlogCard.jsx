@@ -6,7 +6,7 @@ function BlogCard({ blog }) {
       href={blog.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] hover:scale-105 transition-all duration-300"
+      className="from-black border-[#222222a0] relative rounded-lg border bg-gradient-to-r to-[#0a0a0a] hover:scale-105 transition-all duration-300"
     >
       <div className="h-44 lg:h-52 w-full rounded-t-lg overflow-hidden">
         <img

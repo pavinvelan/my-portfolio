@@ -3,65 +3,11 @@ import { BsGithub, BsLinkedin } from "react-icons/bs"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { MdDownload } from "react-icons/md"
 import { RiContactsFill } from "react-icons/ri"
-import { useState, useEffect, useRef } from "react"
-import MetallicPaint from "../MetallicPaint"
-import useTextImage from "../helper/useTextImage"
 import DecryptedText from "../DecryptedText"
-
-function hslToHex(h, s, l) {
-  s /= 100
-  l /= 100
-  const a = s * Math.min(l, 1 - l)
-  const f = (n) => {
-    const k = (n + h / 30) % 12
-    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
-    return Math.round(255 * color).toString(16).padStart(2, '0')
-  }
-  return `#${f(0)}${f(8)}${f(4)}`
-}
-
-function useColorShift(speed = 0.02) {
-  const [t, setT] = useState(0)
-  const rafRef = useRef(null)
-  const lastRef = useRef(performance.now())
-
-  useEffect(() => {
-    const tick = (now) => {
-      const dt = now - lastRef.current
-      lastRef.current = now
-      setT((prev) => prev + speed * dt * 0.001)
-      rafRef.current = requestAnimationFrame(tick)
-    }
-    rafRef.current = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(rafRef.current)
-  }, [speed])
-
-  // Neon Mercury: icy cyan light, deep navy dark, electric cyan tint
-  // Subtle shifts keep it within the cyan/teal family
-  const lightHue = 190 + Math.sin(t * 0.6) * 10  // 180–200 (cyan range)
-  const lightS = 40 + Math.sin(t * 0.5) * 10      // 30–50% saturation
-  const lightL = 90 + Math.sin(t * 0.4) * 5        // 85–95% lightness (icy bright)
-
-  const darkHue = 210 + Math.sin(t * 0.3) * 10     // 200–220 (deep navy)
-  const tintHue = 185 + Math.sin(t * 0.8) * 15     // 170–200 (electric cyan shift)
-
-  return {
-    lightColor: hslToHex(lightHue, lightS, lightL),
-    darkColor: hslToHex(darkHue, 60, 8),
-    tintColor: hslToHex(tintHue, 90, 52),
-  }
-}
+import { StrokeFill } from "@/components/ui/stroke-fill"
+import { CreepyButton } from "@/components/ui/creepy-button"
 
 function HeroSection() {
-  const nameImage = useTextImage(personalData.name, {
-    fontSize: 140,
-    fontWeight: '900',
-    color: '#000000',
-    padding: 10,
-  })
-
-  const { lightColor, darkColor, tintColor } = useColorShift(0.02)
-
   const scrollToContact = (e) => {
     e.preventDefault()
     const element = document.getElementById('contact')
@@ -80,31 +26,14 @@ function HeroSection() {
             <br />
             <DecryptedText text="This is" speed={60} animateOn="view" sequential={true} revealDirection="start" className="text-white" />
           </h1>
-          {nameImage && (
-            <div className="my-3 rounded-lg overflow-hidden" style={{ width: '100%', aspectRatio: '5.5 / 1' }}>
-              <MetallicPaint
-                imageSrc={nameImage}
-                lightColor={lightColor}
-                darkColor={darkColor}
-                tintColor={tintColor}
-                speed={0.3}
-                scale={3}
-                brightness={2.5}
-                contrast={0.4}
-                liquid={0.6}
-                refraction={0.015}
-                patternSharpness={1.8}
-                waveAmplitude={0.5}
-                chromaticSpread={1.5}
-                fresnel={1.5}
-                mouseAnimation={false}
-              />
-            </div>
-          )}
+          
+          <div className="my-3 py-4 w-full flex justify-start -ml-[0.1em]">
+            <StrokeFill text={personalData.name} duration={3} />
+          </div>
+
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             <DecryptedText text={"I'm a Professional "} speed={50} animateOn="view" sequential={true} revealDirection="start" className="text-white" />
-            <DecryptedText text={personalData.designation} speed={40} animateOn="view" sequential={true} revealDirection="center" className="text-[#00F0FF]" />
-            .
+            <DecryptedText text={personalData.designation} speed={40} animateOn="view" sequential={true} revealDirection="center" className="text-zinc-300" />
           </h1>
 
           <div className="my-12 flex items-center gap-5">
@@ -112,7 +41,7 @@ function HeroSection() {
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all text-[#A855F7] hover:scale-125 duration-300"
+              className="transition-all text-zinc-400 hover:scale-125 duration-300"
             >
               <BsGithub size={30} />
             </a>
@@ -120,7 +49,7 @@ function HeroSection() {
               href={personalData.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all text-[#A855F7] hover:scale-125 duration-300"
+              className="transition-all text-zinc-400 hover:scale-125 duration-300"
             >
               <BsLinkedin size={30} />
             </a>
@@ -128,7 +57,7 @@ function HeroSection() {
               href={personalData.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all text-[#A855F7] hover:scale-125 duration-300"
+              className="transition-all text-zinc-400 hover:scale-125 duration-300"
             >
               <FaFacebook size={30} />
             </a>
@@ -136,7 +65,7 @@ function HeroSection() {
               href={personalData.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all text-[#A855F7] hover:scale-125 duration-300"
+              className="transition-all text-zinc-400 hover:scale-125 duration-300"
             >
               <FaInstagram size={30} />
             </a>
@@ -146,17 +75,20 @@ function HeroSection() {
             <a 
               href="#contact" 
               onClick={scrollToContact}
-              className="bg-gradient-to-r to-[#00F0FF] from-[#A855F7] p-[1px] rounded-full transition-all duration-300 hover:from-[#00F0FF] hover:to-[#A855F7]"
+              className="animate-neon-glow rounded-full transition-all duration-300 overflow-hidden"
             >
-              <button className="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#0d1224] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out md:font-semibold flex items-center gap-1 hover:gap-3">
-                <span>Contact me</span>
+              <CreepyButton 
+                className="bg-black rounded-full"
+                coverClassName="px-3 text-xs md:px-8 py-3 md:py-4 bg-black rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out md:font-semibold flex items-center gap-2 lg:pr-10"
+              >
+                <span className="whitespace-nowrap">Contact me</span>
                 <RiContactsFill size={16} />
-              </button>
+              </CreepyButton>
             </a>
 
             {personalData.resume && (
               <a 
-                className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-[#A855F7] to-[#00F0FF] px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold" 
+                className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-zinc-600 to-zinc-400 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 href={personalData.resume}
@@ -168,10 +100,10 @@ function HeroSection() {
           </div>
 
         </div>
-        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+        <div className="order-1 lg:order-2 border-zinc-800/50 relative rounded-lg border bg-black/20 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           <div className="flex flex-row">
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#A855F7] to-[#00F0FF]"></div>
-            <div className="h-[1px] w-full bg-gradient-to-r from-[#00F0FF] to-transparent"></div>
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-zinc-400 to-zinc-600"></div>
+            <div className="h-[1px] w-full bg-gradient-to-r from-zinc-600 to-transparent"></div>
           </div>
           <div className="px-4 lg:px-8 py-5">
             <div className="flex flex-row space-x-2">
@@ -180,12 +112,12 @@ function HeroSection() {
               <div className="h-3 w-3 rounded-full bg-green-200"></div>
             </div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+          <div className="overflow-hidden border-t-[1px] border-zinc-800/50 px-4 lg:px-8 py-4 lg:py-8">
             <code className="font-mono text-xs md:text-sm lg:text-base">
               <div className="blink">
-                <span className="mr-2 text-[#A855F7]">const</span>
+                <span className="mr-2 text-zinc-400">const</span>
                 <span className="mr-2 text-white">coder</span>
-                <span className="mr-2 text-[#A855F7]">=</span>
+                <span className="mr-2 text-zinc-400">=</span>
                 <span className="text-gray-400">{'{'}</span>
               </div>
               <div>
