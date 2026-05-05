@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import PillNav from './PillNav'
-import ShimmerText from './ui/ShimmerText'
+import { ShimmerText } from './ui/ShimmerText'
 
 function Navbar() {
   const location = useLocation()
@@ -34,17 +34,17 @@ function Navbar() {
         <div className="flex flex-shrink-0 items-center">
           <Link
             to="/"
-            className="text-3xl font-bold">
-            <ShimmerText text="PAVINVELAN S K" />
+            className="text-2xl font-bold">
+            <ShimmerText text="PAVINVELAN S K" shimmerColor="#00F0FF" className="text-2xl font-black tracking-tight" />
           </Link>
         </div>
 
         <div className="hidden md:block">
           <PillNav 
             items={navItems}
-            baseColor="#ffffff"
-            pillColor="#e2e2e2"
-            hoveredPillTextColor="#000000"
+            baseColor="#a1a1aa" // zinc-400
+            pillColor="#27272a" // zinc-800
+            hoveredPillTextColor="#ffffff"
             activeHref={location.hash || '#'}
           />
         </div>

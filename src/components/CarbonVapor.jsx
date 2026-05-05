@@ -88,10 +88,10 @@ const FRAGMENT_SHADER = `
 
 const CarbonVapor = ({
     baseColor = "#050505",
-    vaporColor = "#666666", // Medium gray
-    speed = 0.5,
-    swirl = 2.0,
-    intensity = 1.7, // Medium intensity
+    vaporColor = "#22333b", // Deep slate/cyan gray
+    speed = 0.4,
+    swirl = 2.5,
+    intensity = 2.2, // Increased for better visibility
 }) => {
     const containerRef = useRef(null);
     const mousePos = useRef(new Vec2(0.5, 0.5));
@@ -155,7 +155,7 @@ const CarbonVapor = ({
         };
     }, [baseColor, vaporColor, speed, swirl, intensity]);
 
-    return <div ref={containerRef} className="fixed inset-0 w-full h-full pointer-events-none -z-10" />;
+    return <div ref={containerRef} className="fixed inset-0 w-full h-full pointer-events-none z-0" />;
 };
 
 export default CarbonVapor;
