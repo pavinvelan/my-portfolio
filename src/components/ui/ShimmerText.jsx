@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-export const ShimmerText = ({
+const ShimmerText = ({
     text = "LUMINOUS",
-    shimmerColor = "#ffffff",
+    color = "#ffffff",
     className = "",
 }) => {
-    const id = `shimmer-${shimmerColor.replace("#", "").replace(",", "")}`;
+    const id = `shimmer-${color.replace("#", "").replace(",", "")}`;
 
     return (
         <span className={`${className} relative inline-block`}>
@@ -17,23 +17,24 @@ export const ShimmerText = ({
                 }
                 @keyframes ${id}-glow {
                     0%, 100% { 
-                        filter: drop-shadow(0 0 4px rgba(255,255,255,0.2)) 
-                                drop-shadow(0 0 8px rgba(0,240,255,0.1)); 
+                        filter: drop-shadow(0 0 4px rgba(255,255,255,0.3)) 
+                                drop-shadow(0 0 8px rgba(255,255,255,0.1)); 
                     }
                     50% { 
-                        filter: drop-shadow(0 0 12px rgba(255,255,255,0.5)) 
-                                drop-shadow(0 0 20px rgba(0,240,255,0.3)); 
+                        filter: drop-shadow(0 0 12px rgba(255,255,255,0.7)) 
+                                drop-shadow(0 0 20px rgba(255,255,255,0.3))
+                                drop-shadow(0 0 30px rgba(255,255,255,0.1)); 
                     }
                 }
                 .${id} {
                     background: linear-gradient(
                         105deg,
-                        rgba(255,255,255,0.1) 0%,
-                        rgba(255,255,255,0.3) 30%,
-                        ${shimmerColor} 48%,
-                        ${shimmerColor} 52%,
-                        rgba(255,255,255,0.3) 70%,
-                        rgba(255,255,255,0.1) 100%
+                        rgba(255,255,255,0.2) 0%,
+                        rgba(255,255,255,0.2) 30%,
+                        rgba(255,255,255,1) 48%,
+                        rgba(255,255,255,1) 52%,
+                        rgba(255,255,255,0.2) 70%,
+                        rgba(255,255,255,0.2) 100%
                     );
                     background-size: 200% auto;
                     -webkit-background-clip: text;
@@ -51,3 +52,4 @@ export const ShimmerText = ({
     );
 };
 
+export default ShimmerText;

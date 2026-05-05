@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { MdDownload } from "react-icons/md"
 import { RiContactsFill } from "react-icons/ri"
 import DecryptedText from "../DecryptedText"
-import { ShimmerText } from "@/components/ui/ShimmerText"
+import { StrokeFill } from "@/components/ui/stroke-fill"
 import { CreepyButton } from "@/components/ui/creepy-button"
 
 function HeroSection() {
@@ -27,12 +27,8 @@ function HeroSection() {
             <DecryptedText text="This is" speed={60} animateOn="view" sequential={true} revealDirection="start" className="text-white" />
           </h1>
           
-          <div className="my-3 py-4 w-full flex justify-start">
-            <ShimmerText 
-              text={personalData.name} 
-              shimmerColor="#00F0FF"
-              className="text-5xl md:text-7xl font-black uppercase tracking-tighter"
-            />
+          <div className="my-3 py-4 w-full flex justify-start -ml-[0.1em]">
+            <StrokeFill text={personalData.name} duration={3} />
           </div>
 
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
